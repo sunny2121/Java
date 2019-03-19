@@ -106,3 +106,10 @@ public class Solution
 		}
 	}
 }
+
+/***** 
+Another simpler way
+
+Collections.sort(studentList,  Comparator.comparing(Student :: getCgpa).reversed().thenComparing(Student :: getFname).thenComparing(Student :: getId));
+
+******/

@@ -32,14 +32,14 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class Student{
+class Student {
 	private int id;
 	private String fname;
 	private double cgpa;
 	public Student(int i, String fn, double cg) {
-        id = i;
-        fname = fn;
-        cgpa = cg;
+        	id = i;
+        	fname = fn;
+        	cgpa = cg;
 	}
 	public int getId() {
 		return id;

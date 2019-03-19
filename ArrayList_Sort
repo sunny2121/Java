@@ -1,4 +1,31 @@
 /* I used the Bubble sort */
+/***********************************
+You are given a list of student information: ID, FirstName, and CGPA. 
+Your task is to rearrange them according to their CGPA in decreasing order. 
+If two student have the same CGPA, then arrange them according to their first name in alphabetical order. 
+If those two students also have the same first name, then order them according to their ID. 
+No two students have the same ID.
+
+Sample input file (file.txt)
+
+6
+33 Rumpa 3.68
+85 Ashis 3.85
+56 Samiha 3.75
+19 Samara 3.75
+22 Fahim 3.76
+11 Samiha 3.75
+
+Sample Output
+
+          Ashis       3.85    85
+          Fahim       3.76    22
+         Samara       3.75    19
+         Samiha       3.75    11
+         Samiha       3.75    56
+          Rumpa       3.68    33
+
+************************************/
 
 import java.io.File;
 import java.io.FileNotFoundException;

@@ -69,7 +69,7 @@ public class Solution
 		int testCases = sc.nextInt();
         	int size = testCases;
 
-		ArrayList<Student> l = new ArrayList<Student>();
+		ArrayList<Student> l = new ArrayList<>();
 		while(testCases>0){
 			int id = sc.nextInt();
 			String fname = sc.next();

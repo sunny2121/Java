@@ -1,0 +1,46 @@
+/*
+Two strings are called anagrams if they contain all the same characters in the same frequencies.
+Constraints: The comparison should NOT be case sensitive.
+*/
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Solution {
+
+      static boolean isAnagram(String a, String b) {
+       
+        if (a.length()!=b.length()) return false;
+        
+        a = a.toLowerCase();
+        b = b.toLowerCase();
+
+        HashMap <Character, Integer> m = new HashMap<>();
+
+        for (int i=0; i<a.length(); i++) {
+            char c = a.charAt(i);
+            if (!m.containsKey(c)) m.put(c,1);
+            else m.put(c,m.get(c)+1);
+        }
+        for (int i=0; i<b.length(); i++) {
+            char c = b.charAt(i);
+            if (!m.containsKey(c)) return false;
+            else {
+                Integer frequency = m.get(c);
+                if (frequency==0) return false;
+                m.put(c,--frequency);
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+    
+        Scanner sc = new Scanner(System.in);
+        String a = sc.next();
+        String b = sc.next();
+        sc.close();
+        boolean rv = isAnagram(a, b);
+        System.out.println( rv ? "Anagrams" : "Not Anagrams" );
+    }
+}

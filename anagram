@@ -23,13 +23,10 @@ public class Solution {
             else m.put(c,m.get(c)+1);
         }
         for (int i=0; i<b.length(); i++) {
-            char c = b.charAt(i);
-            if (!m.containsKey(c)) return false;
-            else {
-                Integer frequency = m.get(c);
-                if (frequency==0) return false;
-                m.put(c,--frequency);
-            }
+            char c = b.charAt(i);            
+            if (!m.containsKey(c) || m.get(c)==0) return false;
+            else m.put(c, m.get(c)-1);
+            
         }
         return true;
     }

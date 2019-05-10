@@ -1,0 +1,77 @@
+/*
+The powerset of any set S is the set of all subsets of S, 
+including the empty set and S itself.
+
+To print all subsets, I used recursion and Stack.
+Because there are two cases for each element (included or not),
+the total subsets is 2^the number of elements,
+we can solve this using recursion and Stack.
+*/
+
+
+import java.util.*;
+
+public class Solution {
+	
+	public static int count = 0;
+	public static int[] a = {1,2,3,4,5};
+	public static Stack<Integer> st = new Stack<>();
+	
+	public static void powerset(int i) {
+		if (i==a.length) {
+			count++;
+			System.out.println(st);
+			return;
+		}
+		else {
+			st.add(a[i]); //the case of including this element
+			powerset(i+1);
+			st.pop(); //the case of not including this element
+			powerset(i+1);
+		}
+	}
+    public static void main(String[] args) {  
+        powerset(0);
+        System.out.println("\n" + "The number of subsets: " + count);
+    }   
+}
+
+
+/*****
+Output:
+
+[1, 2, 3, 4, 5]
+[1, 2, 3, 4]
+[1, 2, 3, 5]
+[1, 2, 3]
+[1, 2, 4, 5]
+[1, 2, 4]
+[1, 2, 5]
+[1, 2]
+[1, 3, 4, 5]
+[1, 3, 4]
+[1, 3, 5]
+[1, 3]
+[1, 4, 5]
+[1, 4]
+[1, 5]
+[1]
+[2, 3, 4, 5]
+[2, 3, 4]
+[2, 3, 5]
+[2, 3]
+[2, 4, 5]
+[2, 4]
+[2, 5]
+[2]
+[3, 4, 5]
+[3, 4]
+[3, 5]
+[3]
+[4, 5]
+[4]
+[5]
+[]
+
+The number of subsets: 32
+*****/

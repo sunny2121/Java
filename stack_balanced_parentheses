@@ -1,0 +1,65 @@
+/*
+
+Check if parentheses are balanced.
+
+Sample Input:
+{}()
+({()})
+{}(
+[]
+
+Sample Output:
+true
+true
+false
+true
+
+*/
+
+
+
+import java.util.*;
+
+class Solution {
+	
+	public static void main(String[] args)
+	{
+		Scanner sc = new Scanner(System.in);
+        ArrayList<String> a = new ArrayList<>();
+
+        while (sc.hasNext()) {
+            a.add(sc.next());
+        }
+        for (String s : a) {
+            System.out.println(isBalanced(s));
+        }
+    }
+    
+    public static boolean isBalanced(String s) {
+    
+        Stack<Character> st = new Stack<>();
+        
+        for (int i=0; i < s.length(); i++){
+        
+            if (s.charAt(i) == '(') 
+                st.push('(');
+            else if (s.charAt(i) == '{')
+                st.push('{');
+            else if (s.charAt(i) == '[')
+                st.push('[');
+            else if (s.charAt(i) == ')') {
+                if (st.isEmpty()) return false;
+                if (st.pop() != '(') return false;
+            }
+            else if (s.charAt(i) == '}') {
+                if (st.isEmpty()) return false;
+                if (st.pop() != '{') return false;
+            }
+            else if (s.charAt(i) == ']') {
+                if (st.isEmpty()) return false;
+                if (st.pop() != '[') return false;
+            }
+        }
+        return st.isEmpty();
+    } 
+}

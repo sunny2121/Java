@@ -24,7 +24,7 @@ public class Solution {
 			return;
 		}
 		else {
-			st.add(a[i]); //the case of including this element
+			st.push(a[i]); //the case of including this element
 			powerset(i+1);
 			st.pop(); //the case of not including this element
 			powerset(i+1);

@@ -1,4 +1,6 @@
 /*
+Comparator interface is used to order the objects of user-defined classes.
+
 Sample Input:
 5
 amy 100

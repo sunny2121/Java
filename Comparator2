@@ -71,14 +71,14 @@ public class Solution
 		Scanner sc = new Scanner(System.in);
 		int n = sc.nextInt();
 		ArrayList<Student> l = new ArrayList<>();
-    Check c = new Check();
+    		Check c = new Check();
 
 		for (int i=0; i<n; i++) 
 			l.add(new Student(sc.nextInt(), sc.next(), sc.nextDouble()));
 	  
-    Collections.sort(l, c);
+    		Collections.sort(l, c);
 
-    for(Student st : l)
+    		for(Student st : l)
 			System.out.printf("%-7s %.2f  %d\n", st.getName(), st.getGpa(), st.getId());
 	}
 }

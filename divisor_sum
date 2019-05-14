@@ -7,9 +7,10 @@ For example divisors of 6 are 1, 2, 3 and 6, so divisor_sum should return 12.
 
     public int divisor_sum(int n) {
         if (n==1) return 1;
-        int rv = 1+n;
-        for (int i=2; i*i<=n; i++) {
-            if (n%i==0) rv += i + n/i;
+        int sum = 0;
+        for (int i=1; i*i<=n; i++) {
+            if (n%i==0) sum += i + n/i;
         }
-        return rv;
+        return sum;
     }
+   

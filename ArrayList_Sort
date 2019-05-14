@@ -108,7 +108,7 @@ public class Solution
 }
 
 /***** 
-Another simpler way
+A simple way
 
 Collections.sort(l, Comparator.comparing(Student::getCgpa).reversed().thenComparing(Student::getFname).thenComparing(Student::getId));
 

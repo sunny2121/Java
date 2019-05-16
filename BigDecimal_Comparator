@@ -1,0 +1,68 @@
+/*
+Java's BigDecimal class can handle arbitrary-precision signed decimal numbers.
+
+Given an array, s, of n number strings, sort them in descending order — but wait, there's more! 
+Each number must be printed in the exact same format as it was read from stdin, 
+meaning that .1 is printed as .1, and 0.1 is printed as 0.1. 
+If two numbers represent numerically equivalent values (e.g., .1 = 0.1), 
+then they must be listed in the same order as they were received as input).
+
+Sample Input:
+9
+-100
+50
+0
+56.6
+90
+0.12
+.12
+02.34
+000.000
+
+Sample Output:
+90
+56.6
+50
+02.34
+0.12
+.12
+0
+000.000
+-100
+
+*/
+
+
+import java.math.BigDecimal;
+import java.util.*;
+
+class Solution {
+
+    public static void main(String []args){
+    
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        String[] s = new String[n+2]; //2 is added purposely to check errors 
+        for(int i=0;i<n;i++){
+            s[i] = sc.next();
+        }
+        sc.close();
+
+        class Checker implements Comparator<String> {
+            public int compare(String a, String b) {
+            	if(a==null || b==null) return 0;
+                return (new BigDecimal(b)).compareTo(new BigDecimal(a));
+            }
+        }
+        Arrays.sort(s, new Checker());
+        
+        for (int i=0;i<n;i++) // for (String st : s) prints two "null" at the end, so don't use it
+        {
+            System.out.println(s[i]);
+        }
+    }
+}
+
+
+
+

@@ -42,7 +42,7 @@ class Solution {
     
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        String[] s = new String[n+2]; //2 is added purposely to check errors 
+        String[] s = new String[n+2]; //2 is added purposely to see if you check errors 
         for(int i=0;i<n;i++){
             s[i] = sc.next();
         }

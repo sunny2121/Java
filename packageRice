@@ -11,14 +11,11 @@ e.g. (5,3,24) -> false
 
 public boolean packageRice(int big, int small, int goal) {
 
-		boolean rv = false;
-		
-		if (big*5<=goal) {
-			if ((big*5+small)>=goal) rv = true;
+		if (big*5 > goal) {
+			if ((goal%5) <= small) return true;
 		}
-		else { // 6 1 17
-			int r = goal%5;
-			if (small >= r) rv = true;
+		else {
+			if ((goal-big*5) <= small) return true;
 		}
-		return rv;
+		return false;
 }

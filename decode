@@ -13,15 +13,17 @@ Implement a decoder for the Ceasar cipher where N = 5.
 
 public String decode(String code) {
 
-		char[] c = code.toCharArray();
+	char[] c = code.toCharArray();
 
-		for (int i=0; i<c.length; i++) {
+	for (int i=0; i<c.length; i++) {
     
-		    if (c[i]+5 > 'z') {
-				    c[i] = (char)(c[i]+5 - ('z'-'a'+1)); // alphabet length = 'z'-'a'+1
-			  }
-			  else c[i] = (char)(c[i]+5);		
-		}		
-		return String.valueOf(c);
+		if (c[i]+5 > 'z') {
+		
+			c[i] = (char)(c[i]+5 - ('z'-'a'+1)); // alphabet length = 'z'-'a'+1
+		}
+		else c[i] = (char)(c[i]+5);		
+	}
+	
+	return String.valueOf(c);
 }
 

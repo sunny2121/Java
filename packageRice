@@ -1,0 +1,22 @@
+/*
+Package Rice Bags
+
+Provided that you have a given number of small rice bags (1 kilo each) and big rice bags (5 kilo each), 
+write a method that returns true if it is possible to make a package with goal kilos of rice.
+*/
+
+
+
+public boolean packageRice(int big, int small, int goal) {
+
+		boolean rv = false;
+		
+		if (big*5<=goal) {
+			if ((big*5+small)>=goal) rv = true;
+		}
+		else { // 6 1 17
+			int r = goal%5;
+			if (small >= r) rv = true;
+		}
+		return rv;
+}

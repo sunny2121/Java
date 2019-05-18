@@ -1,0 +1,18 @@
+/*
+Number Of Tree Nodes
+
+Write a method that returns the number of nodes in a binary tree.
+TreeNode API methods: node.left() and node.right().
+
+*/
+
+
+
+public Integer numberOfTreeNodes(TreeNode node) {
+
+  if (node==null) return 0;
+
+  return 1 + numberOfTreeNodes(node.left()) + numberOfTreeNodes(node.right());
+}
+
+

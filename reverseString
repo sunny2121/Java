@@ -8,7 +8,7 @@ For example, 'java interview' becomes 'weivretni avaj'.
 
 
 
-public String reverse(String s) {
+public String reverse(String s) { 
 
 	String rv = "";
 	
@@ -18,6 +18,19 @@ public String reverse(String s) {
 	return rv;
 }
 
+
+// Reverse an integer number
+
+public int reverse(int n) {
+
+	String s = String.valueOf(n);
+	String rv = "";
+		
+	for (int i=0; i<s.length(); i++) {
+		rv += s.charAt(s.length()-1-i);
+	}
+	return Integer.parseInt(rv);
+}
 
 
 
